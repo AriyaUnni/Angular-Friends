@@ -6,6 +6,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddfriendComponent } from './addfriend/addfriend.component';
 import { ViewfriendComponent } from './viewfriend/viewfriend.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const appRoutes:Routes=[
+  {
+    path:"",component:AddfriendComponent
+  },
+  {
+    path:"view",component:ViewfriendComponent
+  }
+]
+
 
 @NgModule({
   declarations: [
@@ -16,7 +28,9 @@ import { ViewfriendComponent } from './viewfriend/viewfriend.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
